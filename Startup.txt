@@ -1,0 +1,38 @@
+DJANGO STARTUP
+
+* Create Project
+* Create templates folder
+* Create static folder
+* Create .env file
+* adjust settings.py
+	* TEMPLATE_DIR = Path(BASE_DIR, 'templates')
+	* install django-environ
+		* settings.py
+			* import environ
+			* environ.Env.read_env()
+			* SECRET_KEY = env('SECRET_KEY')			
+	* install django-debug-toobar
+		* settings.py
+			* INSTALLED_APPS > 'debug_toolbar'
+			* MIDDLEWARE > 'debug_toolbar.middleware.DebugToolbarMiddleware'
+			* INTERNAL_IPS = ['127.0.0.1']
+		* urls.py
+			* from django.conf import settings
+			* if settings.DEBUG:
+					import debug_toolbar
+					urlpatterns = [
+						path('__debug__/', include(debug_toolbar.urls)),
+						] + ulrpatterns
+* Adjust config/urls.py
+	* from django.conf import views
+	* urlpatterns = [
+		path('admin/', admin.site.urls),
+		path('', views.HomePage.as_view(), name='home'),
+	]
+* create views.py under config
+	* from django.shortcuts import render
+	* from django.views.generic import TemplateView
+	* Create HomePage class
+		* class HomePage(TemplateView):
+			template_name = 'index.html'
+	
