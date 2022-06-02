@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authentication',
     'debug_toolbar',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,6 @@ STATICFILES_DIRS = [Path(BASE_DIR, 'static'),]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INTERNAL_IPS = ['127.0.0.1',]
+
+LOGIN_REDIRECT_URL = 'login_landing'
+LOGOUT_REDIRECT_URL = 'logout_landing'

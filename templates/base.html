@@ -36,11 +36,13 @@
                 </ul>
                 <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                     {% if user.is_authenticated %}
-                    <li class="nav-item"><a href="" class="nav-link active">logout</a></li>
-                    <li class="nav-item"><a href="" class="btn btn-outline-primary">admin</a>
+                    <li class="nav-item"><a href="{% url 'authentication:logout' %}" class="nav-link active">logout</a>
+                    </li>
+                    <li class="nav-item"><a href="{% url 'admin:index' %}" class="btn btn-outline-primary">admin</a>
                     </li>
                     {% else %}
-                    <li class="nav-item"><a href="" class="nav-link active">Login</a></li>
+                    <li class="nav-item"><a href="{% url 'authentication:login' %}" class="nav-link active">Login</a>
+                    </li>
                     <li class="nav-item"><a href="" class="nav-link active">Sign Up</a></li>
                     {% endif %}
                 </ul>
