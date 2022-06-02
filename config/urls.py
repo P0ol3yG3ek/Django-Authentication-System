@@ -9,6 +9,7 @@ urlpatterns = [
     path('login_landing/', views.LoginLandingView.as_view(), name='login_landing'),
     path('logout_landing/', views.LogoutLandingView.as_view(), name='logout_landing'),
     path('authentication/', include('authentication.urls', namespace='authentication')),
+    path('application/', include('application.urls', namespace='application')),
 ]
 
 if settings.DEBUG: 

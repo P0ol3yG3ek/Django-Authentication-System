@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'authentication',
     'debug_toolbar',
     'bootstrap5',
+    'application',
 ]
 
 MIDDLEWARE = [
