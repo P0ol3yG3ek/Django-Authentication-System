@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+{% block breadcrumb %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Signup</li>
+    </ol>
+</nav>
+{% endblock breadcrumb %}
+{% block base %}
+<h3>Signup</h3>
+<div class="container">
+    <form method="POST" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+        <button type="submit" class="btn btn-primary">Sign up</button>
+        {% endbuttons %}
+    </form>
+</div>
+{% endblock base %}
